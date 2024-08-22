@@ -5,6 +5,9 @@ return {
 
     config = function()
         require('mini.statusline').setup()
+        require('mini.starter').setup {
+            footer = "",
+        }
 
         local minifiles = require "mini.files"
         minifiles.setup()

@@ -2,13 +2,6 @@ require "brendanfh.settings"
 require "brendanfh.mappings"
 require "brendanfh.lazy_setup"
 
-
-
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
-
-
 local BrendanfhGroup = vim.api.nvim_create_augroup("Brendanfh", {})
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -27,9 +20,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
     end
 })
-
-
-vim.cmd.colorscheme "kanagawa"
-vim.keymap.set("n", "<leader>cl", function() vim.o.background = "light" end)
-vim.keymap.set("n", "<leader>cd", function() vim.o.background = "dark" end)
 
