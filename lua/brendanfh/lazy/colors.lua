@@ -20,15 +20,15 @@ return {
 
     { "EdenEast/nightfox.nvim" },
 
-    {
-        "RedsXDD/neopywal.nvim",
-        name = "neopywal",
-        lazy = false,
-        priority = 1000,
-        opts = {},
+    -- {
+    --     "RedsXDD/neopywal.nvim",
+    --     name = "neopywal",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {},
 
-        config = function() require "neopywal".setup {} end
-    },
+    --     config = function() require "neopywal".setup {} end
+    -- },
 
     {
         "folke/tokyonight.nvim",
