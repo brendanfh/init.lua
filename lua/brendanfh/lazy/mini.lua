@@ -1,22 +1,32 @@
-return {
-    'echasnovski/mini.nvim',
-    version = '*',
-    lazy = false,
-
-    dependencies = {
-        'echasnovski/mini.icons',
-    },
-
-    config = function()
-        require('mini.icons').setup()
-        require('mini.statusline').setup()
-        require('mini.starter').setup {
-            footer = "",
-        }
-
-        local minifiles = require "mini.files"
-        minifiles.setup()
-
-        vim.keymap.set("n", "<leader>fb", minifiles.open, {})
-    end
-}
+return {}
+-- return {
+--     'echasnovski/mini.nvim',
+--     version = '*',
+--     lazy = false,
+-- 
+--     dependencies = {
+--         'echasnovski/mini.icons',
+--     },
+-- 
+--     config = function()
+--         require('mini.icons').setup()
+--         require('mini.statusline').setup()
+--         require('mini.starter').setup {
+--             footer = "",
+--         }
+-- 
+--         local minifiles = require "mini.files"
+--         minifiles.setup()
+-- 
+--         vim.keymap.set("n", "<leader>fb", function()
+--           local f = vim.api.nvim_buf_get_name(0)
+--           if not vim.uv.fs_stat(f) then
+--             f = vim.fn.getcwd()
+--           end
+--           local _ = minifiles.close() or minifiles.open(f, false)
+--           vim.schedule(function()
+--             minifiles.reveal_cwd()
+--           end)
+--         end, {})
+--     end
+-- }

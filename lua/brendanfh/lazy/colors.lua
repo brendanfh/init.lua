@@ -1,6 +1,7 @@
 vim.keymap.set("n", "<leader>cl", function() vim.o.background = "light" end)
 vim.keymap.set("n", "<leader>cd", function() vim.o.background = "dark" end)
-vim.cmd.colorscheme "retrobox"
+
+-- vim.cmd "hi Normal guibg=None"
 
 return {
     { "rebelot/kanagawa.nvim"},
@@ -16,6 +17,8 @@ return {
     -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
     -- { "miikanissi/modus-themes.nvim" },
+
+    { "EdenEast/nightfox.nvim" },
 
     {
         "RedsXDD/neopywal.nvim",

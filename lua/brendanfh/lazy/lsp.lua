@@ -23,6 +23,8 @@ return {
         require("mason-lspconfig").setup {
             ensure_installed = {
                 -- List of Language Servers that must be installed (known to Mason)
+                -- "tsserver",
+                "omnisharp",
                 "ts_ls",
             },
 
@@ -30,6 +32,17 @@ return {
                 function(server_name)
                     require("lspconfig")[server_name].setup {
                         capabilties = capabilities
+                    }
+                end,
+
+                ["omnisharp"] = function()
+                    require("lspconfig")["omnisharp"].setup {
+                        capabilties = capabilities,
+                        root_dir = function(fname)
+                            local primary = require("lspconfig").util.root_pattern("*.sln")(fname)
+                            local fallback = require("lspconfig").util.root_pattern("*.sln")(fname)
+                            return primary or fallback
+                        end
                     }
                 end,
 
