@@ -23,8 +23,7 @@ return {
         require("mason-lspconfig").setup {
             ensure_installed = {
                 -- List of Language Servers that must be installed (known to Mason)
-                "tsserver",
-                "omnisharp_mono"
+                "ts_ls",
             },
 
             handlers = {
