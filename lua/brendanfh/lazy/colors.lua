@@ -1,5 +1,12 @@
-vim.keymap.set("n", "<leader>cl", function() vim.o.background = "light" end)
-vim.keymap.set("n", "<leader>cd", function() vim.o.background = "dark" end)
+vim.keymap.set("n", "<leader>cl", function()
+    vim.cmd.colorscheme "newpaper"
+    vim.o.background = "light"
+end)
+
+vim.keymap.set("n", "<leader>cd", function()
+    vim.cmd.colorscheme "kanagawa-dragon"
+    vim.o.background = "dark"
+end)
 
 -- vim.cmd "hi Normal guibg=None"
 
