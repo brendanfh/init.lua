@@ -21,3 +21,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
+local function SwitchExFile()
+    local filename = vim.api.nvim_buf_get_name(0)
+    if filename:match "%.ex" then
+        vim.cmd('e ' .. filename:sub(1, -4) .. '.html.heex')
+    elseif filename:match "%.html.heex" then
+        vim.cmd('e ' .. filename:sub(1, -11) .. '.ex')
+    end
+end
+
+vim.api.nvim_create_user_command("SwitchExFile", SwitchExFile, { nargs = 0 })
+
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"} , {
+    pattern = {"*.ex", "*.heex"},
+    callback = function(e)
+        local opts = { buffer = e.buf }
+        vim.keymap.set("n", "<leader>hh", SwitchExFile, opts)
+    end
+})
+
