@@ -17,9 +17,14 @@ end)
 return {
     {
         "rebelot/kanagawa.nvim",
+        lazy = false,
+        priority = 1000,
         config = function()
             vim.cmd.colorscheme "kanagawa-dragon"
         end
+    },
+
+    { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000,
     },
 
     -- { "Mofiqul/vscode.nvim"},

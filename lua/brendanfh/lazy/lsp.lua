@@ -106,6 +106,8 @@ return {
                 header = "",
                 prefix = "",
             },
+
+            virtual_lines = true
         })
     end
 }
