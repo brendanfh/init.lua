@@ -1,6 +1,7 @@
 vim.keymap.set("n", "<leader>cl", function()
     -- vim.cmd.colorscheme "newpaper"
     vim.cmd.colorscheme "xcodelight"
+    -- vim.cmd.colorscheme "flexoki-light"
     vim.o.background = "light"
     -- vim.cmd "hi Normal guibg=None"
 end)
@@ -21,8 +22,11 @@ return {
         priority = 1000,
     },
 
-    { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000,
+    {
+        "kepano/flexoki-neovim", name = "flexoki", lazy = false, priority = 1000,
     },
+
+    -- { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
 
     -- { "Mofiqul/vscode.nvim"},
 
@@ -32,7 +36,8 @@ return {
 
     -- { "CantoroMC/nvim-nightmare" },
 
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000,
+    {
+        "catppuccin/nvim", name = "catppuccin", priority = 1000,
         config = function()
             vim.cmd.colorscheme "catppuccin-mocha"
         end
