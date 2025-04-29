@@ -6,9 +6,9 @@ vim.keymap.set("n", "<leader>cl", function()
 end)
 
 vim.keymap.set("n", "<leader>cd", function()
-    -- vim.cmd.colorscheme "catppuccin-mocha"
+    vim.cmd.colorscheme "catppuccin-mocha"
     -- vim.cmd.colorscheme "xcodedarkhc"
-    vim.cmd.colorscheme "kanagawa-dragon"
+    -- vim.cmd.colorscheme "kanagawa-dragon"
     vim.o.background = "dark"
     -- vim.cmd "hi Normal guibg=None"
 end)
@@ -19,9 +19,6 @@ return {
         "rebelot/kanagawa.nvim",
         lazy = false,
         priority = 1000,
-        config = function()
-            vim.cmd.colorscheme "kanagawa-dragon"
-        end
     },
 
     { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000,
@@ -35,7 +32,11 @@ return {
 
     -- { "CantoroMC/nvim-nightmare" },
 
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000,
+        config = function()
+            vim.cmd.colorscheme "catppuccin-mocha"
+        end
+    },
 
     -- { "miikanissi/modus-themes.nvim" },
 
