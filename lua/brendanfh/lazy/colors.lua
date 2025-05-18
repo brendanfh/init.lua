@@ -3,15 +3,15 @@ vim.keymap.set("n", "<leader>cl", function()
     vim.cmd.colorscheme "xcodelight"
     -- vim.cmd.colorscheme "flexoki-light"
     vim.o.background = "light"
-    -- vim.cmd "hi Normal guibg=None"
+    vim.cmd "hi Normal guibg=None"
 end)
 
 vim.keymap.set("n", "<leader>cd", function()
-    vim.cmd.colorscheme "catppuccin-mocha"
+    -- vim.cmd.colorscheme "catppuccin-mocha"
     -- vim.cmd.colorscheme "xcodedarkhc"
-    -- vim.cmd.colorscheme "kanagawa-dragon"
+    vim.cmd.colorscheme "kanagawa-dragon"
     vim.o.background = "dark"
-    -- vim.cmd "hi Normal guibg=None"
+    vim.cmd "hi Normal guibg=None"
 end)
 
 
@@ -39,7 +39,8 @@ return {
     {
         "catppuccin/nvim", name = "catppuccin", priority = 1000,
         config = function()
-            vim.cmd.colorscheme "catppuccin-mocha"
+            vim.cmd.colorscheme "kanagawa-dragon"
+            vim.cmd "hi Normal guibg=None"
         end
     },
 
